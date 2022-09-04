@@ -28,9 +28,10 @@ class Homework {
     }
 
     public static int getDeliveryDays(int deliveryDays, int deliveryDistance) {
-        if (deliveryDistance < 20) {
+        if (deliveryDistance > 20) {
+            deliveryDays++;
             System.out.println("Потребуется дней: " + deliveryDays);
-            if (deliveryDistance >= 60) {
+            if (deliveryDistance > 60) {
                 deliveryDays++;
                 System.out.println("Потребуется дней: " + deliveryDays);
             }
@@ -52,11 +53,12 @@ class Homework {
 
 
         ///Данные для задачи №3
-        int deliveryDistance = 10;
+        int deliveryDistance = 30;
         int deliveryDays = 1;
-        if (deliveryDistance < 20) {
+        if (deliveryDistance > 20) {
+            deliveryDays++;
             }
-            if (deliveryDistance >= 60) {
+            if (deliveryDistance > 60) {
                 deliveryDays++;
             }
             getDeliveryDays(deliveryDays, deliveryDistance);

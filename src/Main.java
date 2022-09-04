@@ -10,23 +10,31 @@ class Homework {
         }
     }
 
-    public static int getClientOS(String name) {
-        if (name.equals("iOS")) {
-                System.out.println(name + "система");
-                return 0;
+    public static int getClientOS(int clientOS, int currentYear) {
+        if (clientOS == 0 && currentYear < 2022) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
+        } else {
+            System.out.println("Приложение будет работать корректно для iOS.");
+            if (clientOS == 1 && currentYear > 2022) {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке.");
             } else {
-                return 1;
+                System.out.println("Приложение будет работать корректно для Android.");
             }
+            return clientOS;
         }
+        return clientOS;
+    }
 
-        public static void main (String[]args){
-            int year = 1900;
-            printYearLeap(year);
-        }
-        String osName = "iOS";
+    public static void main(String[] args) {
+        int year = 1900;
+        printYearLeap(year);
+
+        int clientOS = 0;
         int currentYear = LocalDate.now().getYear();
-        int clientOS = getClientOS(osName);
-        }
+        getClientOS(clientOS, currentYear);
+
+    }
+}
 
 
 
